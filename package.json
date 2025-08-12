@@ -4,8 +4,12 @@
 	"description": "Surplus framework ESBuild plugin",
 	"author": "Josh Junon (https://github.com/qix-)",
 	"license": "MIT",
-	"repository": "surplus/esbuild",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/surplus/esbuild"
+	},
 	"funding": "https://github.com/surplus/esbuild?sponsor=1",
+	"homepage": "https://github.com/surplus",
 	"main": "index.mjs",
 	"type": "module",
 	"keywords": [
@@ -20,7 +24,7 @@
 		"README.md"
 	],
 	"dependencies": {
-		"@surplus/compiler": "^0.1.2"
+		"@surplus/compiler": "^1.0.0"
 	},
 	"engines": {
 		"node": "^12.17.0 || ^14.13 || >=16.0.0"

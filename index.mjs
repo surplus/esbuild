@@ -1,6 +1,10 @@
 import fsp from "node:fs/promises";
 
-import compileSurplus from "@surplus/compiler";
+import { compile } from "@surplus/compiler";
+
+const BASE_RESULT = {
+	pluginName: 'Surplus Compiler'
+};
 
 export default (opts) => ({
 	name: "surplus",
@@ -12,15 +16,26 @@ export default (opts) => ({
 				try {
 					const source = await fsp.readFile(args.path, "utf8");
 
-					const transpiled = compileSurplus(source, opts);
+					const result = compile({
+						source,
+						minify: false,
+						sourcemapFilename: args.path,
+						...opts
+					});
 
 					return {
-						contents: transpiled,
+						...BASE_RESULT,
+						contents: result.code,
+						errors: result.errors?.map(err => ({text: err})),
+						warnings: result.warnings?.map(err => ({text: err})),
 						loader: "default",
 					};
 				} catch (err) {
 					// Handle any errors from the transpiler
-					return { errors: [{ text: err.message }] };
+					return {
+						...BASE_RESULT,
+						errors: [{ text: err.message }]
+					};
 				}
 			});
 		}

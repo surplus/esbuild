@@ -1,0 +1,22 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@surplus/compiler':
+        specifier: ^1.0.0
+        version: 1.0.0
+
+packages:
+
+  '@surplus/compiler@1.0.0':
+    resolution: {integrity: sha512-C2XqVDKa8ovECuo0JVqZDFOMUfDXrYuyqbmpjAOUv0rqjOYxfQccCLwpBlfGy669tR8Hg6x+g8jV9tk9FUbUcw==}
+
+snapshots:
+
+  '@surplus/compiler@1.0.0': {}

@@ -34,4 +34,6 @@ await esbuild.build({
 
 # License
 
+Copyright &copy; 2023-2025 Josh Junon.
+
 Released under the [MIT License](LICENSE).
