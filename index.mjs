@@ -9,9 +9,15 @@ const BASE_RESULT = {
 export default (opts) => ({
 	name: "surplus",
 	setup(build) {
-		const fileExtensions = [".js", ".jsx", ".ts", ".tsx", ".mjs", ".cjs"];
+		const jsFileExtensions = [".js", ".jsx", ".mjs", ".cjs"];
+		const tsFileExtensions = [".ts", ".tsx"];
 
-		for (let ext of fileExtensions) {
+		const fileExtensions = [
+			...jsFileExtensions.map((e) => [e, false]),
+			...tsFileExtensions.map((e) => [e, true]),
+		];
+
+		for (const [ext, ts] of fileExtensions) {
 			build.onLoad({ filter: new RegExp(`\\${ext}$`) }, async (args) => {
 				try {
 					const source = await fsp.readFile(args.path, "utf8");
@@ -20,6 +26,7 @@ export default (opts) => ({
 						source,
 						minify: false,
 						sourcemapFilename: args.path,
+						typescript: ts,
 						...opts,
 					});
 

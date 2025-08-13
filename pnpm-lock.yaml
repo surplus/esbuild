@@ -8,18 +8,18 @@ importers:
   .:
     dependencies:
       "@surplus/compiler":
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.1.0
+        version: 1.1.0
     devDependencies:
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
 
 packages:
-  "@surplus/compiler@1.0.0":
+  "@surplus/compiler@1.1.0":
     resolution:
       {
-        integrity: sha512-C2XqVDKa8ovECuo0JVqZDFOMUfDXrYuyqbmpjAOUv0rqjOYxfQccCLwpBlfGy669tR8Hg6x+g8jV9tk9FUbUcw==,
+        integrity: sha512-2X/AnOqKxNWSf9mpr4yLU6XIq0DpllXP3HB+SnEw9BlmXQ3AYFyNtexbOta57XgvIYIY/SE8pouXca/AWrSUtg==,
       }
 
   prettier@3.6.2:
@@ -31,6 +31,6 @@ packages:
     hasBin: true
 
 snapshots:
-  "@surplus/compiler@1.0.0": {}
+  "@surplus/compiler@1.1.0": {}
 
   prettier@3.6.2: {}
