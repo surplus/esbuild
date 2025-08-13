@@ -18,6 +18,10 @@
 		"esbuild",
 		"plugin"
 	],
+	"scripts": {
+		"format": "prettier -w .",
+		"lint": "prettier -c ."
+	},
 	"files": [
 		"index.mjs",
 		"LICENSE",
@@ -31,5 +35,8 @@
 	},
 	"publishConfig": {
 		"access": "public"
+	},
+	"devDependencies": {
+		"prettier": "^3.6.2"
 	}
 }

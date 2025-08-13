@@ -1,22 +1,36 @@
-lockfileVersion: '9.0'
+lockfileVersion: "9.0"
 
 settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
 importers:
-
   .:
     dependencies:
-      '@surplus/compiler':
+      "@surplus/compiler":
         specifier: ^1.0.0
         version: 1.0.0
+    devDependencies:
+      prettier:
+        specifier: ^3.6.2
+        version: 3.6.2
 
 packages:
+  "@surplus/compiler@1.0.0":
+    resolution:
+      {
+        integrity: sha512-C2XqVDKa8ovECuo0JVqZDFOMUfDXrYuyqbmpjAOUv0rqjOYxfQccCLwpBlfGy669tR8Hg6x+g8jV9tk9FUbUcw==,
+      }
 
-  '@surplus/compiler@1.0.0':
-    resolution: {integrity: sha512-C2XqVDKa8ovECuo0JVqZDFOMUfDXrYuyqbmpjAOUv0rqjOYxfQccCLwpBlfGy669tR8Hg6x+g8jV9tk9FUbUcw==}
+  prettier@3.6.2:
+    resolution:
+      {
+        integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==,
+      }
+    engines: { node: ">=14" }
+    hasBin: true
 
 snapshots:
+  "@surplus/compiler@1.0.0": {}
 
-  '@surplus/compiler@1.0.0': {}
+  prettier@3.6.2: {}
