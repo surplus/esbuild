@@ -28,7 +28,7 @@
 		"README.md"
 	],
 	"dependencies": {
-		"@surplus/compiler": "^1.2.0"
+		"@surplus/compiler": "^1.3.0"
 	},
 	"engines": {
 		"node": "^12.17.0 || ^14.13 || >=16.0.0"
