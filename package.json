@@ -20,15 +20,20 @@
 	],
 	"scripts": {
 		"format": "prettier -w .",
-		"lint": "prettier -c ."
+		"lint": "prettier -c .",
+		"test": "cd test && node esbuild.mjs"
 	},
 	"files": [
+		"lib/",
 		"index.mjs",
 		"LICENSE",
 		"README.md"
 	],
 	"dependencies": {
-		"@surplus/compiler": "^1.3.0"
+		"@surplus/compiler": "^1.3.0",
+		"change-case": "^5.4.4",
+		"css": "^3.0.0",
+		"css-what": "^7.0.0"
 	},
 	"engines": {
 		"node": "^12.17.0 || ^14.13 || >=16.0.0"
@@ -37,6 +42,8 @@
 		"access": "public"
 	},
 	"devDependencies": {
+		"@surplus/s": "^1.2.0",
+		"esbuild": "^0.27.2",
 		"prettier": "^3.6.2"
 	}
 }
