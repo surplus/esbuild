@@ -1,3 +1,31 @@
 .root {
 	color: red;
 }
+
+.both-media {
+	color: blue;
+}
+
+@media screen {
+	.just-media {
+		color: red;
+	}
+	.both-media {
+		color: red;
+	}
+	.within-screen {
+		color: red;
+	}
+}
+
+@media print {
+	.just-media {
+		color: red;
+	}
+	.both-media {
+		color: red;
+	}
+	.within-print {
+		color: red;
+	}
+}

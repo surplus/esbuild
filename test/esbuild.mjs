@@ -1,6 +1,12 @@
 import esbuild from "esbuild";
 import { surplus, surplusCss } from "../index.mjs";
 import fsp from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import assert from "node:assert";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 await esbuild.build({
 	entryPoints: ["app.jsx"],
@@ -32,3 +38,23 @@ try {
 		throw new Error("esbuild succeeded when it should have failed");
 	}
 }
+
+// Regression test: https://github.com/surplus/esbuild/issues/1
+await (async () => {
+	let contents = await fsp.readFile(
+		path.join(__dirname, "bin/app.css"),
+		"utf8",
+	);
+
+	const checkClass = (name) => {
+		assert(contents.includes(`${name}-0`));
+		contents = contents.replaceAll(`${name}-0`, "");
+		assert(!contents.includes(`${name}-1`));
+		assert(!contents.includes(`${name}`));
+	};
+
+	checkClass("both-media");
+	checkClass("just-media");
+	checkClass("within-screen");
+	checkClass("within-print");
+})();
